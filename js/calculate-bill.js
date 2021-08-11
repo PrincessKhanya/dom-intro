@@ -13,12 +13,12 @@ calculateBtn.addEventListener('click', function (){
     var billTotal = 0;
       
     for (var i=0;i<billItems.length;i++){
-        var billItem = billItems[i].trim();
+        var billItem1 = billItems[i].trim();
 
-        if (billItem === "call"){
+        if (billItem1.includes("call")){
             billTotal += 2.75;
         }
-        else if (billItem === "sms"){
+        else if (billItem1.includes("sms")){
             billTotal += 0.75;
         }
     }
