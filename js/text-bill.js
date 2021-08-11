@@ -1,12 +1,45 @@
-// get a reference to the textbox where the bill type is to be entered
+const billTypeTextElement = document.querySelector(".billTypeText");
+const addToBillBtn= document.querySelector(".addToBillBtn");
+const callTotalOneElement = document.querySelector(".callTotalOne");
+const smsTotalOneElement = document.querySelector(".smsTotalOne");
+const totalOneElement = document.querySelector(".totalOne");
 
-//get a reference to the add button
+var callsTotal = 0;
+var smsTotal = 0;
+var totalCost = 0;
 
-//create a variable that will keep track of the total bill
 
-//add an event listener for when the add button is pressed
 
-//in the event listener check if the value in the bill type textbox is 'sms' or 'call'
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
+
+addToBillBtn.addEventListener("click", function (){
+    var billTypeEntered1 = billTypeTextElement.value;
+    var billTypeEntered = billTypeEntered1.trim();
+
+    if (billTypeEntered.includes("call")){
+        callsTotal += 2.75
+    }
+    else if (billTypeEntered.includes("sms")){
+        smsTotal += 0.75;
+    }
+
+    var roundedCallTotal = callsTotal.toFixed(2);
+    callTotalOneElement.innerHTML = roundedCallTotal;
+
+    var roundedSmsTotal = smsTotal.toFixed(2);
+    smsTotalOneElement.innerHTML = roundedSmsTotal;
+
+    totalCost = callsTotal + smsTotal;
+
+    var roundedTotal = totalCost.toFixed(2);
+    totalOneElement.innerHTML = roundedTotal;
+
+    if (totalCost >= 50){
+        totalCostElem.classList.add("danger");
+    }
+    else if (totalCost >= 30){
+        totalCostElem.classList.add("warning");
+    }
+
+})
+
+
