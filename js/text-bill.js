@@ -33,11 +33,15 @@ addToBillBtn.addEventListener("click", function (){
     var roundedTotal = totalCost.toFixed(2);
     totalOneElement.innerHTML = roundedTotal;
 
+    totalOneElement.classList.remove("danger");
+    totalOneElement.classList.remove("warning");
+    
+
     if (totalCost >= 50){
-        totalCostElem.classList.add("danger");
+        totalOneElement.classList.add("danger");
     }
     else if (totalCost >= 30){
-        totalCostElem.classList.add("warning");
+        totalOneElement.classList.add("warning");
     }
 
 })
