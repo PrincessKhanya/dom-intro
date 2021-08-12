@@ -57,10 +57,10 @@ billAddBtn.addEventListener("click", function (){
     totalSettingsElement.classList.remove("warning");
     
 
-    if (totalCost >= 50){
+    if (totalCost >= criticalSetting){
         totalSettingsElement.classList.add("danger");
     }
-    else if (totalCost >= 30){
+    else if (totalCost >= warningSetting){
         totalSettingsElement.classList.add("warning");
     }
 
