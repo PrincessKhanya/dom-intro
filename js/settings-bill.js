@@ -37,7 +37,6 @@ billAddBtn.addEventListener("click", function (){
 
     if (billItemTypeWithSettingsElement.value === "call"){
         callsTotal += callSetting;
-        console.log(callsTotal);
     }
     else if (billItemTypeWithSettingsElement.value === "sms"){
         smsTotal += smsSetting;
