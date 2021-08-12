@@ -11,10 +11,10 @@ radioBillAddBtn.addEventListener("click", function (){
 
     const billItemTypeRadioElement = document.querySelector(".billItemTypeRadio:checked");
 
-    if (billItemTypeRadioElement.value =="call"){
+    if (billItemTypeRadioElement.value === "call"){
         callsTotal += 2.75
     }
-    else if (billItemTypeRadioElement.value =="sms"){
+    else if (billItemTypeRadioElement.value === "sms"){
         smsTotal += 0.75;
     }
 
